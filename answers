@@ -38,31 +38,27 @@ Is there a way for you pinpoint the folder containing the failed calls with your
 Steps to resolve:
 1. rename each folder sequentually, ie 1,2,3,4,5
 2. create new folder, say temp, and copy over files from {1..5} to that folder in a such way, that number of files we take would correspond to the numeric name of the folder. For instance from folder 1 we take 1 file, from folder 2 we take 2 files etc. As result we should get 15 files in temp folder
-3. since we know the length of successful recording (say N), we may assume that total length of recordings in temp folder might've been equal to 15*N if all recordings were correct. However, we know that among these recordings there are corrupted ones, that length is less by 1 sec. With help of editor we can measure the real total length of recordings in temp folder and we can evaluate a difference compared to 15*N. For instance 1 sec difference would point on the recordings from folder 1, 2 sec difference would point on folder 2 etc.
+3. since we know the length of successful recording (say N), we may assume that total length of recordings in temp folder might've been equal to 15*N if all recordings were correct. However, we know that among these recordings there are corrupted ones, that length is less by 1 sec. With help of editor we can measure the real total length of recordings in temp folder and we can evaluate a difference compared to 15*N. For instance 1 sec difference would point on recordings from folder 1, 2 sec difference would point on folder 2 etc.
 As result with only one measuring we can pinpoint the folder with corrupted recordings.
 
 
 
 2) In 1974, on a hot humid September night in Melbourne (according to the Bureau of Meteorology), it was 
-raining heavily at midnight. What is the probability closest to 1 decimal place that 72 hours later it was sunny 
-in Melbourne? 
 
+raining heavily at midnight. What is the probability closest to 1 decimal place that 72 hours later it was sunny 
+
+in Melbourne? 
 [AT] probability is 0.0. 72 hours later from midnight is still midnight.
  
 3) In Australia a date such as 4th Oct 2010 is written as 4/10/2010. In the USA it is written as 10/4/2010. How 
 many such ambiguous dates are there in a year that fall into this category? Write a sample SQL insert 
 statement that inserts data into a single date field which would avoid this ambiguity.
-
-[AT] 
-(1) there are 12x12=144 such dates (01-12 months, 01-12 days, every next number starting 13 unambiguously determines the month position in the date) 
-
-(2) It's not clear what's required - whether I need to determine the date format based on the numbers I given, or just to be able to save all dates in one format to avoid ambiguity. In latter case I'd use next sql (for Oracle )
+[AT] 1. there are 12x12=144 such dates (01-12 months, 01-12 days, every next number starting 13 unambiguously determines the month position in the date) 
+2. It's not clear what's required - whether I need to determine the date format based on the numbers I given, or just to be able to save all dates in one format to avoid ambiguity. In latter case I'd use next sql (for Oracle )
 insert into temp_table(date) values (to_date("04/10/2010),"DD/MM/YYYY"); 
 
 4.
-
-[AT]
-Look script at https://github.com/atrok/Tests/blob/master/ListDirectories/src/main/Start.java
+https://github.com/atrok/Tests/blob/master/ListDirectories/src/main/Start.java
 
 5) Test Blocks
 
@@ -70,24 +66,7 @@ Cyara Professional Services sells Load testing in blocks of 4, 6, 9, 20 hours
 (a) Find all the number of whole hours of testing that the client cannot order or sign up for.
 1,2,3,5,7,11
 
-4
-6
-4+4=8
-9
-4+6=10
-6+6=12
-4+9=13
-6+9=15
-4+6+9=19
-20
-4+20=24
-6+20=26
-9+20=29
-4+6+20=30
-4+9+20=33
-6+20+9=35
-4+6+9+20=39
-
-(b)
+(b) No script, didn't have enough time to consider it
+I'm inclined to use something from numbers theory (euclidian algorithm?) to achieve this
 
 
