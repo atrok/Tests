@@ -1,0 +1,45 @@
+6) Setup of Dialogic Board. 
+
+C:\ProgramData\Dialogic\HMP\demos\SpeechProcessing\CSPDemo\Release>CSPDemo -p2 -b -v -e
+
+Dialogic Continuous Speech Processing Demo Version 01000000-01.
+
+Type CSPdemo -? for command options.
+
+Test Mode        = MANUAL
+Barge In         = Enabled
+Channel Number   = 1
+Echo Canceller   = Enabled
+Protocol         = IP
+Speech Threshold = -40 dB
+VAD Streaming    = Enabled
+
+Calling Manual Mode for ec_stream.
+
+gc_Start passed.
+
+GC_APP : Call Control libraries status -
+        GC_ICAPI_LIB    - available.
+        GC_ISDN_LIB     - available.
+        GC_ANAPI_LIB    - available.
+        GC_PDKRT_LIB    - available.
+        GC_SS7_LIB      - available.
+        GC_DM3CC_LIB    - available.
+        GC_IPM_LIB      - available.
+        GC_H3R_LIB      - available.
+        GC_DIVAISDN_LIB - is not available for use.
+        GC_CUSTOM1_LIB  - configured.
+
+Opening gc_devname=:N_iptB1T1:P_IP:M_ipmB1C1:V_dxxxB1C1.
+gc_OpenEx passed. Waiting for OpenEx Event...
+Received OPENEX Event (0x817).
+Calling gc_GetResourceH...
+gc_GetResourceH obtained the voice/ec handle = 1.
+gc_GetXmitSlot passed  sc_numts=1  slot=4098.
+dx_listen passed.
+dx_getxmitslot passed  sc_numts=1  slot=4096.
+gc_Listen passed.
+GCEV_UNBLOCKED event received.
+gc_WaitCall issued on ldev=2.
+
+   Waiting 20 seconds for a Call...
