@@ -91,6 +91,18 @@ public class ListDirectories {
 				
 			if (name.length()>8)
 				name=name.substring(0, 8);
-			return new SimpleDateFormat("yyyyMMdd").parse(name); 
+			Date d= new SimpleDateFormat("yyyyMMdd").parse(name); 
+			
+			Calendar tempCalendar=new GregorianCalendar();
+			tempCalendar.setTime(d);
+			
+			int y=tempCalendar.get(Calendar.YEAR);
+			tempCalendar.setTimeInMillis(System.currentTimeMillis());
+			int ynow=tempCalendar.get(Calendar.YEAR);
+			
+			if((ynow<y)||(ynow/y)>1)// 
+				System.out.println("Warning: Check entered date pattern format - expected format is <yyyyMMdd>");
+			
+			return d;
 	}
 }
