@@ -34,8 +34,9 @@ public class Start {
 		
 		Start s=new Start();
 		
-		if (args[1].equals("m")){
-			for (int i=0;i<Integer.parseInt(args[0]);i++)
+		if (args.length>1)
+			if(args[1].equals("m")){
+			for (int i=0;i<=Integer.parseInt(args[0]);i++)
 				s.new BlocksCalculation(i);
 			
 		}else			
@@ -43,7 +44,7 @@ public class Start {
 		
 	}
 	
-class  BlocksCalculation{
+public class  BlocksCalculation{
 
 	private int FOURH=Blocks.FOURH.getValue();
 	private int SIXH=Blocks.SIXH.getValue();
