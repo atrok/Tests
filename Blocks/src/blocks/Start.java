@@ -34,11 +34,11 @@ public class Start {
 		
 		Start s=new Start();
 		
-		if (args.length>1)
+		if (args.length>1){
 			if(args[1].equals("m")){
 			for (int i=0;i<=Integer.parseInt(args[0]);i++)
 				s.new BlocksCalculation(i);
-			
+			}
 		}else			
 			s.new BlocksCalculation(Integer.parseInt(args[0]));
 		
@@ -70,8 +70,9 @@ public class  BlocksCalculation{
 		/* results representation */
 		
 		System.out.println("--------------------------------------------------------------");
-		System.out.println(FOURH+"  |  "+SIXH+"  |  "+NINEH+"  |  "+TWENTYH+"  ");
+		System.out.println("Available blocks |  "+FOURH+"  |  "+SIXH+"  |  "+NINEH+"  |  "+TWENTYH);
 		System.out.println("--------------------------------------------------------------");
+		System.out.print("Result           |  ");
 		
 		int sum=0;
 		
@@ -87,8 +88,8 @@ public class  BlocksCalculation{
 				System.out.print(res+"  |  ");
 			}
 		}
-		System.out.print(h+"    | ");
-		System.out.print("price: "+sum+"\n");
+		System.out.print("In: "+h+"    | ");
+		System.out.print("price $"+sum+"\n");
 	}
 	
 	private  int  calculateFor(int hours, Blocks divider){
