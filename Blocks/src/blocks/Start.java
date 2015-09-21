@@ -2,6 +2,7 @@ package blocks;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import blocks.Blocks;
 
 public class Start {
 	private static int[] nonTreatableHours=new int[]{1,2,3,5,7,11};
@@ -9,9 +10,9 @@ public class Start {
 	public static void main(String[] args){
 
 		
-		if(args.length!=1){
+		if(args.length==0){
 			System.out.println("Enter amount of hours you want calculate blocks for");
-			System.out.println("java -jar <jarfile> <num_of_hours> (m<mode to calculatet entries from 1 to num_of_hours, optional>)");
+			//System.out.println("java -jar <jarfile> <num_of_hours> (m<mode to calculatet entries from 1 to num_of_hours, optional>)");
 			System.exit(0);
 		}
 		
@@ -33,7 +34,7 @@ public class Start {
 		
 		Start s=new Start();
 		
-		if (args[0]=="m"){
+		if (args[1].equals("m")){
 			for (int i=0;i<Integer.parseInt(args[0]);i++)
 				s.new BlocksCalculation(i);
 			
@@ -57,19 +58,20 @@ class  BlocksCalculation{
 		
 		hours=h;
 	
+		if (!isIn(h)){
 		for(int i=Blocks.values().length-1; i>=0;i--){
 			
 			hours=calculateFor(hours,Blocks.values()[i]);
 			if (hours==0)
 				break;
 		}
-		
+		}
 		/* results representation */
 		
 		System.out.println("--------------------------------------------------------------");
-		System.out.println("Blocks:"+FOURH+"  |  "+SIXH+"  |  "+NINEH+"  |  "+TWENTYH+"  ");
+		System.out.println(FOURH+"  |  "+SIXH+"  |  "+NINEH+"  |  "+TWENTYH+"  ");
 		System.out.println("--------------------------------------------------------------");
-		System.out.print(h+"    | ");
+		
 		int sum=0;
 		
 		if (hours!=0){ // we found number that we cannot disassemble with use of our blocks
@@ -84,6 +86,7 @@ class  BlocksCalculation{
 				System.out.print(res+"  |  ");
 			}
 		}
+		System.out.print(h+"    | ");
 		System.out.print("price: "+sum+"\n");
 	}
 	
